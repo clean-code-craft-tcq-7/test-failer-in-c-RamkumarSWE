@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
-test
+#include <limit.h>
+
 char size(int cms) {
     char sizeName = '\0';
     if(cms < 38) {
@@ -17,6 +18,11 @@ int main() {
     assert(size(37) == 'S');
     assert(size(40) == 'M');
     assert(size(43) == 'L');
+
+    assert(size(42) == 'M'); //Fails
+    assert(size(38) == 'S'); //Fails
+    assert(size(INT_MAX) == 'L');
+
     printf("All is well (maybe!)\n");
     return 0;
 }
