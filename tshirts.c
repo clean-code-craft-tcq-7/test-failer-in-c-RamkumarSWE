@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <assert.h>
-#include <limit.h>
 
 char size(int cms) {
     char sizeName = '\0';
