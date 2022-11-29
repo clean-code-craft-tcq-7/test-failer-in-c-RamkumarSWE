@@ -19,9 +19,11 @@ int main() {
     assert(size(40) == 'M');
     assert(size(43) == 'L');
 
-    assert(size(42) == 'M'); //Fails
-    assert(size(38) == 'S'); //Fails
-    assert(size(INT_MAX) == 'L');
+    assert(size(42) == 'M');
+    assert(size(38) == 'S');
+    assert(size(-10000) == 'S');
+    assert(size(0) == 'S');
+    assert(size(10000) == 'L');
 
     printf("All is well (maybe!)\n");
     return 0;
