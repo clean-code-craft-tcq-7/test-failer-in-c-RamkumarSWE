@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-typedef int (*networkAlert_ptr_t)(float);
+typedef int (*networkAlert_fnptr)(float);
 
 int alertFailureCount = 0;
 
@@ -26,9 +26,9 @@ int networkAlertReal(float celcius) {
 
 }
 
-void alertInCelcius(networkAlert_ptr_t networkAlert_func, float farenheit) {
+void alertInCelcius(networkAlert_fnptr networkAlert_fn, float farenheit) {
     float celcius = (farenheit - 32) * 5 / 9;
-    int returnCode = networkAlert_func(celcius);
+    int returnCode = networkAlert_fn(celcius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
         // let us keep a count of failures to report
