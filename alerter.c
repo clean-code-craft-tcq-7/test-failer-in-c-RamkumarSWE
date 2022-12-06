@@ -17,6 +17,7 @@ int networkAlertReal(float celcius) {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
     // Return 200 for ok
     // Return 500 for not-ok
+    // Assumption If celcius is less than 200 for ok else not-ok 
     if (celcius < 200.0) {
         return 200;
     }else {
