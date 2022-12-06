@@ -28,7 +28,7 @@ int main() {
     assert(size(40) == 'M');
 
     assert(size(43) == 'L');
-    assert(100000 == 'L');
+    assert(size(100000) == 'L');
 
     assert(size(0) == '\0');
     assert(size(-1) == '\0');
