@@ -32,7 +32,7 @@ int main() {
 
     assert(size(0) == '\0');
     assert(size(-1) == '\0');
-    assert(-100000 == '\0');
+    assert(size(-100000) == '\0');
 
     printf("All is well (maybe!)\n");
     return 0;
