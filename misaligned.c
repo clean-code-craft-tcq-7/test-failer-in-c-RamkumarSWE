@@ -14,16 +14,7 @@ const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 ColorPair colorPairs[MAX_COLOR_PAIR];
 
-void printColorMap() {
-    int size, i;
-    size = fillColorMapList();
-
-    for (i = 0; i < size; i++) {
-        printf("%d | %s | %s\n", i, colorPairs[i].majorColor, colorPairs[i].minorColor);
-    }
-}
-
-int fillColorMapList() {
+int getColorMapList() {
 
     int i = 0, j = 0;
     for(i = 0; i < 5; i++) {
@@ -35,16 +26,22 @@ int fillColorMapList() {
     return i * j;
 }
 
+void printColorMap() {
+    int size, i;
+    size = getColorMapList();
+
+    for (i = 0; i < size; i++) {
+        printf("%d | %s | %s\n", i, colorPairs[i].majorColor, colorPairs[i].minorColor);
+    }
+}
+
+
 int main() {
 
-    //printColorMap
     printColorMap();
 
-    //fillColorMapList
-    //Checking the Total Pair Count
-    assert(fillColorMapList() == 25);
+    assert(getColorMapList() == 25);
 
-    //Checking the Pairs Minor and Major Color.
     assert(strcmp(colorPairs[0].majorColor, "White") == 0);
     assert(strcmp(colorPairs[0].minorColor, "Blue") == 0);
     assert(strcmp(colorPairs[1].majorColor, "White") == 0);
