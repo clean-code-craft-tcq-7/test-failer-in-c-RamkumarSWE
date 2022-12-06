@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
 
 #define MAX_COLOR_PAIR 25
 #define MAX_COLOR_LEN 15
